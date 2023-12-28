@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mental Health Quiz</title>
+</head>
+<style>
+body {
+    background: url("img.jpg") no-repeat center center;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+   background-size: cover; 
+}
+
+</style>
+
+
+
+	
+<body>
+	<div class="navbar" align="right">
+		<h2 class="myclass">
+		<a href="About.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+		<a href="FAQ.html">FAQ</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</h2>
+	</div>
+	
+	<h1>Mental Health Quiz</h1>
+	<form action ="{{url_for('predict')}}" method="POSTt">
+	<p><b> What is your age</b></p><br>
+     <input type="number" placeholder="Enter Age"  name="Age"><br>
+     <br>
+        <p><b>1.What is your gender</b>?</b></p><br>
+            <input type="radio" name="Gender" value="Female">Female<br>
+            <input type="radio" name="Gender" value="Male">Male<br>
+            <input type="radio" name="Gender" value="Other">Other<br>
+           <br>
+	<p><b>2.Are you self employed?</b></p> <br>
+		<input type="radio" name="self_employed" value="Yes">Yes<br>
+		<input type="radio" name="self_employed" value="No" >No<br>
+		<input type="radio" name="self_employed" value="NA">None of the above<br>
+	
+
+	<p><b>3.Does anyone from your family is undergoing any issues related to mental health?</b></p> <br>
+		<input type="radio" name="family_history" value="Yes">Yes<br>
+		<input type="radio" name="family_history" value="No" >No<br>
+
+	<p><b>4.Do you any problem at your workplace?</b></p> <br>
+		<input type="radio" name="work_interfere" value="Never">Never<br>
+		<input type="radio" name="work_interfere" value="Often" >Often<br>
+		<input type="radio" name="work_interfere" value="Rarely">Rarely<br>
+		<input type="radio" name="work_interfere" value="Sometimes" >Sometimes<br>
+		<input type="radio" name="work_interfere" value="NA">NA<br>
+	
+
+	<p><b>5.From the given below range select appropriate range representing number of employees working:</b></p><br>
+		<input type="radio" name="no_employees" value="1-5">1-5<br>
+		<input type="radio" name="no_employees" value="6-25" >6-25<br>
+		<input type="radio" name="no_employees" value="26-100">26-100<br>
+		 <input type="radio" name="no_employees" value="100-500">100-500<br>
+		<input type="radio" name="no_employees" value="500-1000">500-1000<br>
+		<input type="radio" name="no_employees" value="More than 1000">More than 1000<br>
+	
+
+
+	<p><b>6.Do you work remotely?</b></p><br>
+		<input type="radio" name="remote_work" value="Yes">Yes<br>
+		<input type="radio" name="remote_work" value="No" >No<br>
+	
+
+	<p><b>7. Is your company a tech company?</b></p><br>
+		<input type="radio" name="tech_company" value="Yes">Yes<br>
+		<input type="radio" name="tech_company" value="No" >No<br>
+
+	<p><b>8. Do you get any benefits from the company?</b></p> <br>
+    <input type="radio" name="benefits" value="Yes">Yes<br>
+    <input type="radio" name="benefits" value="No" >No<br>
+    <input type="radio" name="benefits" value="Don't know">Don'tknow<br>
+
+
+	<p><b>9.Do you feel cared or valued?</b></p><br>
+		<input type="radio" name="care_options" value="Yes">Yes<br>
+		<input type="radio" name="care_options" value="No" >No<br>
+		<input type="radio" name="care_options" value="Not sure">Not sure<br>
+	
+
+	<p><b>10.Do they conduct any mental health wellness programs?</b></p> <br>
+		<input type="radio" name="wellness_program" value="Yes">Yes<br>
+		<input type="radio" name="wellness_program" value="No" >No<br>
+		<input type="radio" name="wellness_program" value="Don't know">Don't know<br>
+	
+
+	<p><b>11. Can you reach out to someone for help in your company></b></p> <br>
+		<input type="radio" name="seek_help" value="Yes">Yes<br>
+		 <input type="radio" name="seek_help" value="No" >No<br>
+		 <input type="radio" name="seek_help" value="Don't know">Don't know<br>
+
+	<p><b>12.Is there any anonymity at your workplace?</b></p> <br>
+		<input type="radio" name="anonymity" value="Yes">Yes<br>
+		 <input type="radio" name="anonymity" value="No">No<br>
+		 <input type="radio" name="anonymity" value="Don't know">Don't know<br>
+
+	<p><b>13.How is the process of getting leave in your company?</b></p><br>
+		<input type="radio" name="leave" value="Somewhat difficult">Somewhat difficult<br>
+		<input type="radio" name="leave" value="Somewhat easy" >Somewhat easy<br>
+		<input type="radio" name="leave" value="Very difficult">Very difficult<br>
+		<input type="radio" name="leave" value="Don't know">Don't know<br>
+		<input type="radio" name="leave" value="Very easy">Very easy<br>
+
+	<p><b>14.Do you face any consequences sharing your mental health condition with coworkers?</b></p><br>
+		<input type="radio" name="mental_health_consequence" value="Yes">Yes<br>
+		<input type="radio" name="mental_health_consequence" value="No" >No<br>
+		<input type="radio" name="mental_health_consequence" value="Maybe">NA<br>
+
+
+	<p><b>15.Do you face any consequences sharing your physical health condition with coworkers?</b></p><br>
+		<input type="radio" name="phys_health_consequence" value="Yes">Yes<br>
+		<input type="radio" name="phys_health_consequence" value="No" >No<br>
+		<input type="radio" name="phys_health_consequence" value="Maybe">NA<br>
+	
+
+
+	<p><b>16..Can you willingly share your mental health condition with your coworkers?</b></p>
+	<input type="radio" name="coworkers" value="Yes">Yes<br>
+    <input type="radio" name="coworkers" value="No" >No<br>
+    <input type="radio" name="coworkers" value="Some of them">Some of them<br>
+
+
+
+	<p><b>17..Can you comfortably share your mental problems with supervisor?</b></p> <br>
+		<input type="radio" name="supervisor" value="Yes">Yes<br>
+	   <input type="radio" name="supervisor" value="No">No<br>
+	   <input type="radio" name="supervisor" value="Some of them">Some of them<br>
+
+	<p><b>18. Are you comfortable bringing up your mental issues in front of potential employer?</b></p><br>
+		<input type="radio" name="mental_health_interview" value="Yes">Yes<br>
+	   <input type="radio" name="mental_health_interview" value="No">No<br>
+	   <input type="radio" name="mental_health_interview" value="Maybe">Maybe<br>
+
+	<p><b>19..Are you comfortable bringing up your physical issues in front of potential employer?</b></p><br>
+		<input type="radio" name="phys_health_interview" value="Yes">Yes<br>
+	   <input type="radio" name="phys_health_interview" value="No" >No<br>
+	   <input type="radio" name="phys_health_interview" value="Maybe">Maybe<br>
+
+
+	<p><b>20.Does mental health problem causes bigger impact than physical problem?</b></p><br>
+		<input type="radio" name="mental_vs_physical" value="Yes">Yes<br>
+	  <input type="radio" name="mental_vs_physical" value="No" >No<br>
+	  <input type="radio" name="mental_vs_physical" value="Don't know">Don't know<br>
+  
+
+	<p><b>21.Did you face any consequences after sharing your mental conditions?</b><br>
+		<input type="radio" name="obs_consequence" value="Yes">Yes<br>
+		<input type="radio" name="obs_consequence" value="No" >No<br>
+
+	
+
+	<input type="submit" value="Submit">
+</form>
